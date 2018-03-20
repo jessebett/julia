@@ -141,7 +141,7 @@ end
 function first_insert_for_bb(code, cfg::CFG, block::Int)
     for idx in cfg.blocks[block].stmts
         stmt = code[idx]
-        if !isa(stmt, LabelNode) && !isa(stmt, PhiNode)
+        if !isa(stmt, PhiNode)
             return idx
         end
     end
